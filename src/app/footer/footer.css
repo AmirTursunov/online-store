@@ -1,0 +1,61 @@
+.footer-title {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+.footer-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  color: #727272;
+  width: 204;
+  height: 66;
+  top: 3196px;
+  left: 143px;
+}
+.input-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+.input-text {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  letter-spacing: 0%;
+}
+
+.location {
+  width: 180;
+  height: 44;
+  top: 3311px;
+  left: 409px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0%;
+}
+.email {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0%;
+}
+.phone {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0%;
+}
+.bottom-footer {
+  display: block;
+}
+@media (max-width: 640px) {
+  .bottom-footer {
+    display: flex;
+    justify-content: center;
+  }
+}
