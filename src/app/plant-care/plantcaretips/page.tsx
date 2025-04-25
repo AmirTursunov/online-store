@@ -9,7 +9,7 @@ const PlantCareTips = () => {
       <Navbar />
       <div className="max-w-5xl mx-auto px-4 py-8 text-gray-800">
         <h1 className="text-3xl font-bold mb-6 text-green-700 text-center">
-          🌱 Plant Care Tips: Indoor & Outdoor
+          🌱 Plant Care Tips: Indoor &amp; Outdoor
         </h1>
 
         {/* Indoor Care */}
@@ -24,7 +24,8 @@ const PlantCareTips = () => {
             </li>
             <li>
               <strong>Water Moderately:</strong> Check the soil with your
-              finger. If it's dry, it's time to water (typically once a week).
+              finger. If it&apos;s dry, it&apos;s time to water (typically once
+              a week).
             </li>
             <li>
               <strong>Keep Humidity:</strong> Mist the leaves or place a bowl of

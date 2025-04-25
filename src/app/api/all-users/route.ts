@@ -1,11 +1,11 @@
 // app/api/all-users/route.ts
 
-import { clerkClient } from "@clerk/clerk-sdk-node";
+import { clerkClient, User } from "@clerk/clerk-sdk-node";
 import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const allUsers: any[] = [];
+    const allUsers: User[] = [];
     const limit = 100;
     let offset = 0;
     let hasMore = true;

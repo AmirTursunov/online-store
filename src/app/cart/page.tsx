@@ -77,7 +77,7 @@ const Cart = () => {
   async function decreaseProduct(cart: Cart) {
     if (cart.quantity > 1) {
       const newQuantity = cart.quantity - 1;
-      const { data, error } = await supabase
+      await supabase
         .from("korzina")
         .update({ quantity: newQuantity })
         .eq("id", cart.id);
@@ -98,7 +98,7 @@ const Cart = () => {
   async function handleBuy(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    const { data, error } = await supabase.from("order").insert([
+    const { error } = await supabase.from("order").insert([
       {
         fullName: order.fullname,
         lastName: order.lastName,

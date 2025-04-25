@@ -8,6 +8,8 @@ interface Product {
   price: string;
 }
 
+type OrderStatus = "open" | "inprogress" | "close";
+
 interface Order {
   id: string;
   fullName: string;
@@ -15,7 +17,7 @@ interface Order {
   phoneNumber: string;
   totalPrice: string;
   productids: string[];
-  status: "open" | "inprogress" | "close";
+  status: OrderStatus;
   createdAt: string;
 }
 
@@ -23,7 +25,7 @@ interface OrderWithProducts extends Order {
   products: Product[];
 }
 
-const statuses = ["open", "inprogress", "close"];
+const statuses: OrderStatus[] = ["open", "inprogress", "close"];
 
 const AdminOrders = () => {
   const [orders, setOrders] = useState<OrderWithProducts[]>([]);
@@ -33,7 +35,7 @@ const AdminOrders = () => {
     getOrders();
   }, []);
 
-  async function getOrders() {
+  const getOrders = async () => {
     const { data: ordersData } = await supabase.from("order").select("*");
     if (!ordersData) return;
 
@@ -52,22 +54,24 @@ const AdminOrders = () => {
     );
 
     setOrders(ordersWithProducts);
-  }
+  };
 
   const handleDragStart = (id: string) => {
     setDraggedOrderId(id);
   };
 
-  const handleDrop = async (status: string) => {
+  const handleDrop = async (newStatus: OrderStatus) => {
     if (!draggedOrderId) return;
 
     const updatedOrders = orders.map((order) =>
-      order.id === draggedOrderId ? { ...order, status: status as any } : order
+      order.id === draggedOrderId ? { ...order, status: newStatus } : order
     );
-
     setOrders(updatedOrders);
 
-    await supabase.from("order").update({ status }).eq("id", draggedOrderId);
+    await supabase
+      .from("order")
+      .update({ status: newStatus })
+      .eq("id", draggedOrderId);
 
     setDraggedOrderId(null);
   };
@@ -110,7 +114,7 @@ const AdminOrders = () => {
                   ))}
                 </ul>
                 <h6 className="d-flex align-items-center gap-2 mt-2">
-                  Total:{" "}
+                  Total:
                   <span className="badge bg-success">${order.totalPrice}</span>
                 </h6>
               </div>

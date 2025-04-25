@@ -36,7 +36,7 @@ const AdminCategories = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
   async function deleteCategory(id: string) {
-    const { data } = await supabase.from("category").delete().eq("id", id);
+    await supabase.from("category").delete().eq("id", id);
     getCategory();
   }
   const filteredCategories = category.filter((itm) =>

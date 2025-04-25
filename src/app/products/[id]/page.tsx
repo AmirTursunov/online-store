@@ -40,7 +40,7 @@ const ProductDetails = () => {
     }
   }, [user?.id]);
   const fetchProduct = async (productId: string) => {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from("products")
       .select("*")
       .eq("id", productId)

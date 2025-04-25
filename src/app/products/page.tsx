@@ -38,7 +38,7 @@ const Products = () => {
   }, [user]);
   // liked products
   async function loadLikedProducts(userId: string) {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from("likedProducts")
       .select("productId")
       .eq("userId", userId);

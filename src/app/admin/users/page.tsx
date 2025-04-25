@@ -1,5 +1,5 @@
 "use client";
-import { Trash2, Ban, CheckCircle } from "lucide-react";
+import { Ban, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type User = {
@@ -43,10 +43,6 @@ export default function AllUsers() {
 
     fetchUsers();
   }, []);
-
-  const handleDelete = (id: string) => {
-    console.log("Delete user with ID:", id);
-  };
 
   const handleBan = (id: string) => {
     console.log("Ban user with ID:", id);

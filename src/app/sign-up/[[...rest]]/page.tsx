@@ -3,11 +3,10 @@
 import { SignUp } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const SignUpPage = () => {
   const { user, isLoaded } = useUser();
-  const [redirectUrl, setRedirectUrl] = useState("/");
 
   useEffect(() => {
     if (isLoaded && user) {
@@ -20,7 +19,7 @@ const SignUpPage = () => {
 
   return (
     <div className="d-flex justify-content-center mt-5">
-      <SignUp afterSignUpUrl={redirectUrl} />;
+      <SignUp afterSignUpUrl="/" />
     </div>
   );
 };

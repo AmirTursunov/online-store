@@ -4,13 +4,7 @@ import { SignOutButton, useUser } from "@clerk/nextjs";
 import React, { useEffect, useState } from "react";
 import { Category } from "../category/page";
 import { Product } from "../products/page";
-type User = {
-  id: string;
-  username?: string;
-  lastName?: string;
-  emailAddresses: { emailAddress: string }[];
-  status?: "active" | "banned";
-};
+
 interface Order {
   id: string;
   fullName: string;

@@ -33,7 +33,6 @@ interface Cart {
 }
 const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [product, setProduct] = useState<Product | null>(null);
   const [category, setCategory] = useState<Category[]>([]);
   const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
