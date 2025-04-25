@@ -44,20 +44,6 @@ export default function AllUsers() {
     fetchUsers();
   }, []);
 
-  const handleBan = (id: string) => {
-    console.log("Ban user with ID:", id);
-    setUsers((prev) =>
-      prev.map((u) => (u.id === id ? { ...u, status: "banned" } : u))
-    );
-  };
-
-  const handleActivate = (id: string) => {
-    console.log("Activate user with ID:", id);
-    setUsers((prev) =>
-      prev.map((u) => (u.id === id ? { ...u, status: "active" } : u))
-    );
-  };
-
   if (loading) return <p>Yuklanmoqda...</p>;
 
   return (
@@ -73,8 +59,6 @@ export default function AllUsers() {
               <th className="border px-4 py-2 text-left">Name</th>
               <th className="border px-4 py-2 text-left">Email</th>
               <th className="border px-4 py-2 text-left">Role</th>
-              <th className="border px-4 py-2 text-left">Status</th>
-              <th className="border px-4 py-2 text-left">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -90,30 +74,6 @@ export default function AllUsers() {
                   "amirtursunov2@gmail.com"
                     ? "admin"
                     : "user"}
-                </td>
-                <td className="border px-4 py-2">
-                  {user.status === "banned" ? (
-                    <span className="text-red-600 font-semibold">Banned</span>
-                  ) : (
-                    <span className="text-green-600 font-semibold">Active</span>
-                  )}
-                </td>
-                <td className="border px-4 py-2 space-x-2 d-flex align-items-center">
-                  {user.status === "active" ? (
-                    <button
-                      onClick={() => handleBan(user.id)}
-                      className="btn btn-danger d-flex align-items-center gap-1"
-                    >
-                      <Ban size={20} />
-                    </button>
-                  ) : (
-                    <button
-                      onClick={() => handleActivate(user.id)}
-                      className="btn btn-success d-flex align-items-center gap-1"
-                    >
-                      <CheckCircle size={20} />
-                    </button>
-                  )}
                 </td>
               </tr>
             ))}
