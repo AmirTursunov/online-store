@@ -1,5 +1,4 @@
 "use client";
-import { Ban, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type User = {
