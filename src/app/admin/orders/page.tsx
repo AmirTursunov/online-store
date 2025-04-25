@@ -67,7 +67,6 @@ const AdminOrders = () => {
 
     setOrders(updatedOrders);
 
-    // Update in Supabase
     await supabase.from("order").update({ status }).eq("id", draggedOrderId);
 
     setDraggedOrderId(null);

@@ -25,7 +25,6 @@ interface Order {
 const AdminDashboard = () => {
   const [category, setCategory] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
-  const [users, setUsers] = useState<User[]>([]);
   const [orders, setOrders] = useState<Order[]>([]);
   useEffect(() => {
     fetchData();
@@ -47,7 +46,7 @@ const AdminDashboard = () => {
 
         setUserCount(data.total);
       } catch (error) {
-        console.error("Userlarni olishda xatolik:", error);
+        console.error(error);
       }
     };
 
@@ -65,7 +64,7 @@ const AdminDashboard = () => {
       setProducts(productsRes.data || []);
       setOrders(ordersRes.data || []);
     } catch (error) {
-      console.error("Xatolik yuz berdi:", error);
+      console.error(error);
     }
   }
   return (

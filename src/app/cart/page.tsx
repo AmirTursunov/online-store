@@ -30,7 +30,6 @@ const Cart = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [cart, setCart] = useState<Cart[]>([]);
   const [loading, setLoading] = useState(true);
-  const [total, setTotal] = useState<Number>();
   const [isOpen, setIsOpen] = useState(false);
   const [order, setOrder] = useState({
     fullname: "",

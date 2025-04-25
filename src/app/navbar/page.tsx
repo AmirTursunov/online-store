@@ -76,7 +76,6 @@ const Navbar = () => {
         </ul>
 
         {/* ICONS */}
-        {/* login icon bosilganda , /sign-inga o'tadi , admin emailini kiritadi va yana homega kelyapti adminga emas?? */}
         <div className="d-flex align-items-center gap-2">
           <button
             className="btn"

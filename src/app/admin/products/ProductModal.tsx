@@ -90,7 +90,6 @@ const ProductFormModal: React.FC<ProductFormModalProps> = ({
       await supabase.from("products").insert([newProduct]);
     }
 
-    // Reset form
     setProductName("");
     setDescription("");
     setPrice("");

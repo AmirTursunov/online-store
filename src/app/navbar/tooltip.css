@@ -7,7 +7,6 @@
   z-index: 9999 !important;
   font-weight: 500;
 }
-/* Menu item */
 .nav-link {
   position: relative;
   padding-bottom: 8px;
@@ -55,9 +54,7 @@
     gap: 10px;
   }
 
-  .nav-link {
-    font-size: 16px !important;
-  }
+
 } */
 .side-drawer {
   position: fixed;
