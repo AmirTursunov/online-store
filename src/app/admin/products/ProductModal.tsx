@@ -276,15 +276,9 @@ const ProductFormModal: React.FC<ProductFormModalProps> = ({
                 >
                   Cancel
                 </button>
-                {loading ? (
-                  <button type="submit" className="btn btn-primary" disabled>
-                    Adding...
-                  </button>
-                ) : (
-                  <button type="submit" className="btn btn-primary">
-                    Add Product
-                  </button>
-                )}
+                <button type="submit" className="btn btn-primary">
+                  Add Product
+                </button>
               </div>
             </form>
           </div>
