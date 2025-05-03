@@ -11,9 +11,13 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+// ✅ Google tasdiqlash kodi shu yerga qo‘shildi
 export const metadata: Metadata = {
   title: "GreenShop",
   description: "Beautiful plant shop",
+  verification: {
+    google: "64tmh_077tfypHwpJseyiK8AQE8qFAOR8qqnefn80zY",
+  },
 };
 
 export default function RootLayout({
