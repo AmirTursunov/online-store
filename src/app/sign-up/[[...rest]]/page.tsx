@@ -11,7 +11,7 @@ const SignUpPage = () => {
   useEffect(() => {
     if (isLoaded && user) {
       const email = user?.emailAddresses[0]?.emailAddress;
-      if (email === "amirtursunov2@gmail.com") {
+      if (email === "amir@gmail.com") {
         redirect("/admin");
       }
     }

@@ -26,7 +26,7 @@ const Navbar = () => {
           href="/"
           className="fw-bold fs-4 text-success text-decoration-none"
         >
-          Amir-Store
+          Greenshop
         </Link>
 
         {/* Search Input */}
