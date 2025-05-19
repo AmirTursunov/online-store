@@ -26,6 +26,7 @@ const ProductFormModal: React.FC<ProductFormModalProps> = ({
   const [categoryValue, setCategoryValue] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  console.log(loading);
 
   useEffect(() => {
     getCategory();
